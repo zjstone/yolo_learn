@@ -131,15 +131,15 @@ def main():
         print("YOLO检测失败")
     
     # Faster R-CNN检测
-    # rcnn_image, rcnn_count, rcnn_time = faster_rcnn_detect(image_path)
-    # if rcnn_image is not None:
-    #     cv2.imshow('Faster R-CNN Detection', rcnn_image)
-    #     print("\nFaster R-CNN检测结果:")
-    #     for obj, count in rcnn_count.items():
-    #         print(f"{obj}: {count}")
-    #     print(f"Faster R-CNN运行时间: {rcnn_time:.2f}秒")
-    # else:
-    #     print("Faster R-CNN检测失败")
+    rcnn_image, rcnn_count, rcnn_time = faster_rcnn_detect(image_path)
+    if rcnn_image is not None:
+        cv2.imshow('Faster R-CNN Detection', rcnn_image)
+        print("\nFaster R-CNN检测结果:")
+        for obj, count in rcnn_count.items():
+            print(f"{obj}: {count}")
+        print(f"Faster R-CNN运行时间: {rcnn_time:.2f}秒")
+    else:
+        print("Faster R-CNN检测失败")
     
     cv2.waitKey(0)
     cv2.destroyAllWindows()
